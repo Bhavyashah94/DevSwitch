@@ -1,0 +1,36 @@
+name: Translation
+description: Ask for a new interface language, or report a wrong translation.
+labels: [translation]
+body:
+  - type: input
+    id: language
+    attributes:
+      label: Language
+      placeholder: Simplified Chinese
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Request type
+      options:
+        - Add this language
+        - Fix an existing translation
+    validations:
+      required: true
+  - type: dropdown
+    id: help
+    attributes:
+      label: Can you help translate or review?
+      description: The app has about 80 short strings, all in one file.
+      options:
+        - Yes, I can translate
+        - Yes, I can review a translation
+        - No
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: For a wrong translation, the screen, the current text, and what it should say.

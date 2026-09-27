@@ -1,0 +1,27 @@
+name: Feature request
+description: Suggest something new, or an improvement to what is already there.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What would you like to do?
+      description: The task or problem, rather than a specific solution.
+      placeholder: I switch wireless debugging on every morning and would like it to turn on by itself when I join my home Wi-Fi.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: How could DevSwitch help?
+      description: Your idea for how it could work, if you have one.
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What do you do now instead?
+      description: Workarounds or other apps you use for this today.
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else
+      description: Mockups, screenshots, or links.

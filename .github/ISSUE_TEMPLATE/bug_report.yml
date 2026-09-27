@@ -1,0 +1,108 @@
+name: Bug report
+description: Something does not work, crashes, or behaves differently than described.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this. Please check the [open and closed issues](https://github.com/retransmit/DevSwitch/issues?q=is%3Aissue) first, and make sure you are on the [latest release](https://github.com/retransmit/DevSwitch/releases/latest).
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What went wrong, and what you expected to happen instead.
+      placeholder: Tapping the Wireless debugging switch turns it on, then it switches back off after a second.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open DevSwitch
+        2. Go to the Wireless tab
+        3. Tap Pair with code
+        4. ...
+    validations:
+      required: true
+  - type: input
+    id: app-version
+    attributes:
+      label: DevSwitch version
+      description: Shown in Android Settings, Apps, DevSwitch.
+      placeholder: "1.0.1"
+    validations:
+      required: true
+  - type: dropdown
+    id: source
+    attributes:
+      label: Installed from
+      options:
+        - F-Droid
+        - GitHub release
+        - Built from source
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Device
+      description: Manufacturer and model.
+      placeholder: Samsung Galaxy A07 (SM-A075F)
+    validations:
+      required: true
+  - type: input
+    id: android
+    attributes:
+      label: Android version and system skin
+      placeholder: Android 16, One UI 8.5
+    validations:
+      required: true
+  - type: dropdown
+    id: grant
+    attributes:
+      label: How was the permission granted?
+      description: The one-time WRITE_SECURE_SETTINGS setup.
+      options:
+        - adb from a computer
+        - Shizuku
+        - Root
+        - Not granted yet
+        - Not sure
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part of the app?
+      multiple: true
+      options:
+        - App does not start or closes
+        - Switches tab
+        - Quick Settings tiles
+        - Wireless tab, this device's address
+        - Wireless tab, devices on the network
+        - Pairing with code
+        - Scanning Android Studio's QR
+        - Paired computers list or unpairing
+        - Other
+  - type: input
+    id: shizuku
+    attributes:
+      label: Shizuku version
+      description: Only if Shizuku is installed.
+      placeholder: "13.6.0"
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: |
+        For crashes, a log helps a lot. With the phone connected over adb, run the command below, reproduce the problem, then paste the output.
+        `adb logcat -v time | grep -iE "devswitch|AndroidRuntime"`
+      render: shell
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else
+      description: Screenshots, a screen recording, or other details.
